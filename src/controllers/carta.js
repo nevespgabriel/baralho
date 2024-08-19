@@ -1,11 +1,15 @@
+const naipe_controller = require("./naipe.js");
 const db = [];
 let proxId = 1;
 
 const model = (body, id = proxId) => {
-  if (body.nome != "" && body.nome != undefined) {
+  if (body.nome != "" && body.nome != undefined &&
+      body.naipe_id != undefined && naipe_controller.show(carta.naipe_id)
+  ) {
     return {
       id: id,
       nome: body.nome,
+      naipe_id: carta.naipe_id
     };
   }
 };
